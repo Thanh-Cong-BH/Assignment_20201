@@ -6,7 +6,7 @@ void option1()
 {
     student enrolled;
 
-    FILE *input = fopen("SV2021.txt", "r+b");
+    FILE *input = fopen("SV2021.dat", "r+b");
     
 	while (fscanf(input, "%[^\t]\t%f\n", enrolled.name, &enrolled.score) != EOF)
     {
@@ -19,7 +19,7 @@ void option2()
 {
     student added;
 
-    FILE *input = fopen("SV2021.txt", "a+b");
+    FILE *input = fopen("SV2021.dat", "a+b");
 
     printf("Enter name: ");
     getchar();
@@ -37,7 +37,7 @@ void option3(void)
     char search[160];
     int count = 0;
 
-    FILE *input = fopen("SV2021.txt", "r+b");
+    FILE *input = fopen("SV2021.dat", "r+b");
 
     printf("Enter name: ");
     getchar();
@@ -71,12 +71,12 @@ int main(void)
 
         printf("Lua chon hanh dong can thuc thi: ");
     	scanf("%d", &option);
-		if (option == 1)
+	if (option == 1)
         	option1();
         else if (option == 2)
         	option2();
         else if (option == 3)
-			option3();
+		option3();
         printf("\n");
     }
 
