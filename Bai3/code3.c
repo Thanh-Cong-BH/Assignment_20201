@@ -6,9 +6,9 @@ void option1()
 {
     student enrolled;
 
-    FILE *input = fopen("SV2021.dat", "r+b");
+    FILE *input = fopen("SV2021.txt", "r+b");
     
-	while (fscanf(input, "%[^\t]\t%lf\n", enrolled.name, &enrolled.score) != EOF)
+	while (fscanf(input, "%[^\t]\t%f\n", enrolled.name, &enrolled.score) != EOF)
     {
         printf("- %s\t%.2f\n", enrolled.name, enrolled.score);
     }
@@ -19,7 +19,7 @@ void option2()
 {
     student added;
 
-    FILE *input = fopen("SV2021.dat", "a+b");
+    FILE *input = fopen("SV2021.txt", "a+b");
 
     printf("Enter name: ");
     getchar();
@@ -37,17 +37,17 @@ void option3(void)
     char search[160];
     int count = 0;
 
-    FILE *input = fopen("SV2021.dat", "r+b");
+    FILE *input = fopen("SV2021.txt", "r+b");
 
     printf("Enter name: ");
     getchar();
     gets(search);
 
-    while (fscanf(input, "%[^\t]\t%lf\n",SV2021.name, &SV2021.score) != EOF)
+    while (fscanf(input, "%[^\t]\t%f\n",SV2021.name, &SV2021.score) != EOF)
     {
         if (strstr(SV2021.name, search) != NULL)
         {
-            printf("%*s\t %.2lf\n", 160,SV2021.name, SV2021.score);
+            printf("%*s\t %.2f\n", 160,SV2021.name, SV2021.score);
             count++;
         }
     }
@@ -77,8 +77,6 @@ int main(void)
         	option2();
         else if (option == 3)
 			option3();
-		else if (option == 4)
-			break;
         printf("\n");
     }
 
