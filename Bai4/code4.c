@@ -92,12 +92,12 @@ void print(card players[][13])
 	int i,j;
     for ( i = 0; i < 4; i++)
     {
-        printf("Player %d: ", i + 1);
+        printf("Nguoi choi %d: ", i + 1);
         for ( j = 0; j < 13; j++)
         {
             printf("%2s[%c] ", players[i][j].rank, players[i][j].suit);
         }
-        printf("\n Four of a kind: ");
+        printf("\n Tu quy: ");
         int card_count = 0, four_count = 0, previous = -1;
         for ( j = 0; j < 13; j++)
         {
@@ -106,7 +106,7 @@ void print(card players[][13])
                 card_count++;
                 if (card_count == 4)
                 {
-                    printf("%2s  ", players[i][j].rank);
+                    printf("%2s", players[i][j].rank);
                     card_count = 0;
                     four_count++;
                 }
@@ -116,7 +116,7 @@ void print(card players[][13])
             previous = players[i][j].card_rank;
         }
         if (four_count == 0)
-            printf("None!");
+            printf("Khong co");
         printf("\n\n");
     }
 }
